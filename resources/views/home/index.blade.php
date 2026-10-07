@@ -71,7 +71,7 @@
   </section>
   <!--/ Home Slider -->
   <main>
-    <x-search-form />
+    <x-search-form action="/s" method="POST" />
 
     <!-- New Cars -->
     <section>
