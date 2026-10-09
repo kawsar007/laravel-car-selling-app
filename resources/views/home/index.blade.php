@@ -1,10 +1,14 @@
-@extends('layouts.app')
+<x-app-layout title="Home page">
+  @php
+    $color = 'red';
+    $bgColor = 'blue'
+   @endphp
 
-@section('title', 'Home Page')
-
-@section('content')
-  <x-card />
-
+  <x-card :$color :$bgColor class="card-rounded">
+    <x-slot name="title">Card Title</x-slot>
+    Card Content 1
+    <x-slot name="footer">Card Footer</x-slot>
+  </x-card>
 
   <!-- Home Slider -->
   <section class="hero-slider">
@@ -57,13 +61,15 @@
       </div>
       <button type="button" class="hero-slide-prev">
         <svg style="width: 18px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 1 1 5l4 4" />
         </svg>
         <span class="sr-only">Previous</span>
       </button>
       <button type="button" class="hero-slide-next">
         <svg style="width: 18px" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 9 4-4-4-4" />
         </svg>
         <span class="sr-only">Next</span>
       </button>
@@ -443,10 +449,8 @@
     </section>
     <!--/ New Cars -->
   </main>
-
-  @section('footerLinks')
+  <x-slot:footerLinks>
     <a href="#">Like 3</a>
     <a href="#">Like 4</a>
-  @endsection
-
-@endsection
+  </x-slot:footerLinks>
+</x-app-layout>
