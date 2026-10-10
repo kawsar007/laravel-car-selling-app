@@ -58,3 +58,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 Start Server : php artisan serve
+
+php artisan make:component car-item // Create class-based component
+php artisan make:component car-item --view // Create anonymous Blade view
+
+php artisan make:controller CarController --resource //Create Resource Controller for CRUD operations
